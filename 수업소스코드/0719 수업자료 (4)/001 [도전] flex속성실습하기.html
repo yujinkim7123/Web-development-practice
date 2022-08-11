@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      border:1px solid black;
+    }
+    .container{
+      display: flex;
+      width:1000px;
+
+      /* flex-direction: row-reverse;
+      flex-wrap: wrap;
+      
+      위와 아래가 같음
+      */
+
+      flex-flow: row-reverse wrap;
+    }
+    .item{
+      width:400px;
+    }
+    /* 방향은 row-reverse + wrap 적용해서 줄바꿈이 발생하는 예제 만들기 */
+  </style>
+</head>
+<body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+</body>
+</html>

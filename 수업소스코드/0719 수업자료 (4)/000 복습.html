@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      border:1px solid black;
+      
+    }
+    .container{
+      display: flex;
+      width:1000px;
+
+      
+      /* 배치 방향을 정한다. 기본값 row, "부모"에게 적용하는 옵션이다.
+      종류 4가지
+
+      flex-direction: row;
+      1.row
+      2.row-reverse
+      3.column
+      4.column-reverse
+      */
+
+      /* 교차축 : "주축"에 "항상" 수직인 "축" */
+
+
+      flex-wrap: wrap;
+      /* 줄넘김 처리, 기본값 nowrap
+      
+      종류
+      1.nowrap
+      2.wrap
+      3.wrap-reverse
+      */
+    }
+    .item{
+      width:300px;
+    }
+  </style>
+</head>
+<body>
+  <!-- flex의 기본구조 부모, 자식'들'이 필요하다 -->
+  <!-- 컨테이너를 기반으로, 아이템들이 어떻게 배치되는가? -->
+
+  <!-- flex는 부모(container)에 적용하는 속성과 -->
+  <!-- 자식(item)에게 적용하는 속성으로 나뉜다 -->
+  <div class="container">
+    <div class="item">lorem*10</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+  </div>
+</body>
+</html>
