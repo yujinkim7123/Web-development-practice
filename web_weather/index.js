@@ -25,7 +25,28 @@ function setTime(){
   const timer = document.querySelector(".timer")
   setInterval(() => {
     const date = new Date()
-    timer.textContent = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+
+
+    const timercontent = document.querySelector(".timer-content");
+
+    const hours = "0" + date.getHours();
+
+    console.log(date.getHours());
+
+    if(12 <= Number(date.getHours()))
+        timercontent.textContent = "good morning, ssafy";
+    else
+       timercontent.textContent = "good morning, ssafy";
+
+    const Minutes = "0" + date.getMinutes();
+    const Seconds = "0" + date.getSeconds();
+
+    
+
+    timer.textContent = `${hours.slice(-2)}:${Minutes.slice(-2)}:${Seconds.slice(-2)}`
+    
+
+
   },1000)
 }
 
@@ -88,7 +109,13 @@ async function renderWeather(){
     // console.log(weatherList)
   
     const modalBody = document.querySelector(".modal-body")
+    
+    const modalbutton = document.querySelector(".modal-button");
+
+    modalbutton.style.backgroundImage =`url(${matchIcon(weatherList[0].weather[0].main)})`
+
     modalBody.innerHTML = weatherList.map(e => weatherWrapperComponent(e)).join("")
+    
   } catch (error) {
     alert(error)
   }
@@ -103,7 +130,8 @@ async function getWeather(latitude, longitude){
 }
 
 function weatherWrapperComponent(e){
-  console.log(e)
+
+
   return `
   <div class="card bg-transparent flex-grow-1 m-2">
     <div class="card-header">
