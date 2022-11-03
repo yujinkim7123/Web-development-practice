@@ -61,6 +61,18 @@ static void MX_USART2_UART_Init(void);
 uint8_t buf[2][10] ={"[KEC]\r\n", "[MAC]\r\n"};
 uint8_t str[100] = "[1]\r\n";
 unsigned long tick = 0;
+
+void kfc()
+{
+  HAL_UART_Transmit(&huart2, buf[0], 10, 100);
+}
+
+void mac()
+{
+  HAL_UART_Transmit(&huart2, buf[1], 10, 100);
+
+}
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *html)
 {
 
@@ -73,13 +85,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *html)
   if(tick%2 == 0){
 
 
-      HAL_UART_Transmit(&huart2, buf[0], 10, 100);
+      kfc();
 
   }
   else if(tick%3 == 0)
   {
 
-      HAL_UART_Transmit(&huart2, buf[1], 10, 100);
+      mac();
 
   }
 }
